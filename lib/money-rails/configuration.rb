@@ -101,5 +101,8 @@ module MoneyRails
     #Configure whether to maintain invalid user input after validations
     mattr_accessor :preserve_user_input
     @@preserve_user_input = false
+
+    mattr_accessor :defaults_to_zero_instead_of_nil
+    @@defaults_to_zero_instead_of_nil = false
   end
 end

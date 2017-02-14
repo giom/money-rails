@@ -204,6 +204,8 @@ module MoneyRails
 
           # Cache the value (it may be nil)
           result = instance_variable_set("@#{name}", amount)
+        elsif MoneyRails::Configuration.defaults_to_zero_instead_of_nil
+          result = Money.new(0, attr_currency)
         end
 
         if MoneyRails::Configuration.preserve_user_input
